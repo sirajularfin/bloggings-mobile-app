@@ -1,18 +1,18 @@
 export enum Colors {
   // Blue Grey Palette
-  blueGrey50 = '#ECEFF1',
-  blueGrey900 = '#212121',
+  BLUE_GREY_50 = '#ECEFF1',
+  BLUE_GREY_900 = '#212121',
 
   // Grey Palette
-  grey400 = '#BDBDBD',
-  grey700 = '#616161',
-  grey800 = '#424242',
+  GREY_400 = '#BDBDBD',
+  GREY_700 = '#616161',
+  GREY_800 = '#424242',
 
   // Indigo Palette
-  indigoA700 = '#304FFE',
+  INDIGO_A700 = '#304FFE',
 
   // Others
-  white = '#FFFFFF',
-  black = '#000000',
-  transparent = 'transparent',
+  WHITE = '#FFFFFF',
+  BLACK = '#000000',
+  TRANSPARENT = 'TRANSPARENT',
 }
