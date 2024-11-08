@@ -10,7 +10,6 @@
     "test": "jest",
     "lint:fix": "eslint . --fix",
     "format:fix": "prettier 'src/**/*.{ts,tsx,json}' --write",
-    "prepare": "husky install",
     "postinstall": "cd ios && pod install && cd .."
   },
   "dependencies": {
@@ -45,11 +44,6 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
   },
   "lint-staged": {
     "*.{ts,tsx}": [
