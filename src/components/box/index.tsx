@@ -19,6 +19,8 @@ export interface IProps {
   horizontalGapBetweenObjects?: number;
   layout?: 'vertical' | 'horizontal' | 'wrap';
   margin?: ScaledSize;
+  marginStart?: ScaledSize;
+  marginEnd?: ScaledSize;
   marginBottom?: ScaledSize;
   marginHorizontal?: ScaledSize;
   marginLeft?: ScaledSize;
@@ -26,6 +28,8 @@ export interface IProps {
   marginTop?: ScaledSize;
   marginVertical?: ScaledSize;
   padding?: ScaledSize;
+  paddingStart?: ScaledSize;
+  paddingEnd?: ScaledSize;
   paddingBottom?: ScaledSize;
   paddingHorizontal?: ScaledSize;
   paddingLeft?: ScaledSize;
@@ -36,7 +40,7 @@ export interface IProps {
   width?: ScaledSize;
 }
 
-const Container: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props }) => {
+const Box: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props }) => {
   const { top, bottom } = useSafeAreaInsets();
 
   if (debug) {
@@ -45,9 +49,7 @@ const Container: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...pr
   }
 
   const classes = styles(props);
-  return (
-    <View style={{ ...classes, paddingTop: top, paddingBottom: bottom }}>{children}</View>
-  );
+  return <View style={{ ...classes, paddingTop: top, paddingBottom: bottom }}>{children}</View>;
 };
 
-export default Container;
+export default Box;
