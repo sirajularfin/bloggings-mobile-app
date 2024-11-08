@@ -4,6 +4,7 @@ import { moderateScale } from '../utils/metrics';
 const { width, height } = useWindowDimensions();
 
 export enum ScaledSize {
+  AUTO = 'auto',
   SCREEN_WIDTH = width,
   SCREEN_HEIGHT = height,
   SIZE_10 = moderateScale(10),
