@@ -1,10 +1,11 @@
 import { FlexAlignType } from 'react-native';
-import { IProps } from '.';
+import { IProps } from './types';
 
 const styles = (styleProps: IProps) => ({
   backgroundColor: styleProps.backgroundColor,
 
   // Flex
+  flex: styleProps.flex,
   alignItems: styleProps.layout !== 'vertical' ? styleProps.alignX : styleProps.alignY,
   alignSelf: styleProps.alignSelf as FlexAlignType | undefined,
   flexDirection:

@@ -1,43 +1,8 @@
 import React, { PropsWithChildren } from 'react';
-import { View } from 'react-native';
-import { ScaledSize } from '../../theme/size';
+import { StyleProp, View, ViewStyle } from 'react-native';
 import { Colors } from '../../theme/colors';
 import styles from './styles';
-
-export interface IProps {
-  alignSelf?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
-  alignX?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
-  alignY?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
-  backgroundColor?: Colors;
-  borderColor?: string;
-  borderRadius?: ScaledSize;
-  borderWidth?: ScaledSize;
-  boxShadow?: string;
-  debug?: boolean;
-  height?: ScaledSize;
-  horizontalGapBetweenObjects?: number;
-  layout?: 'vertical' | 'horizontal' | 'wrap';
-  margin?: ScaledSize;
-  marginStart?: ScaledSize;
-  marginEnd?: ScaledSize;
-  marginBottom?: ScaledSize;
-  marginHorizontal?: ScaledSize;
-  marginLeft?: ScaledSize;
-  marginRight?: ScaledSize;
-  marginTop?: ScaledSize;
-  marginVertical?: ScaledSize;
-  padding?: ScaledSize;
-  paddingStart?: ScaledSize;
-  paddingEnd?: ScaledSize;
-  paddingBottom?: ScaledSize;
-  paddingHorizontal?: ScaledSize;
-  paddingLeft?: ScaledSize;
-  paddingRight?: ScaledSize;
-  paddingTop?: ScaledSize;
-  paddingVertical?: ScaledSize;
-  verticalGapBetweenObjects?: number;
-  width?: ScaledSize;
-}
+import { IProps } from './types';
 
 const Box: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props }) => {
   if (debug) {
@@ -46,7 +11,7 @@ const Box: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props })
   }
 
   const classes = styles(props);
-  return <View style={{ ...classes }}>{children}</View>;
+  return <View style={classes as StyleProp<ViewStyle>}>{children}</View>;
 };
 
 export default Box;
