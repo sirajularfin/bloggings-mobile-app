@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import { ScaledSize } from '../../theme/size';
 import { Colors } from '../../theme/colors';
 import styles from './styles';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export interface IProps {
   alignSelf?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
@@ -41,15 +40,13 @@ export interface IProps {
 }
 
 const Box: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props }) => {
-  const { top, bottom } = useSafeAreaInsets();
-
   if (debug) {
     props.borderWidth = 1;
     props.borderColor = Colors.BLACK;
   }
 
   const classes = styles(props);
-  return <View style={{ ...classes, paddingTop: top, paddingBottom: bottom }}>{children}</View>;
+  return <View style={{ ...classes }}>{children}</View>;
 };
 
 export default Box;
