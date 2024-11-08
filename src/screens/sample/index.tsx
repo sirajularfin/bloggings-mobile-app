@@ -1,23 +1,21 @@
 import React from 'react';
-import Text, { FontVariant } from '../../components/text';
-import Container from '../../components/container';
-import Button from '../../components/button';
-import { ButtonType } from '../../components/button/types';
-import { Font } from '../../theme/typography';
+import Text, { FontVariant } from 'src/components/text';
+import { ScaledSize } from 'src/theme/size';
+import { Colors } from 'src/theme/colors';
+import Box from 'src/components/box';
 
 const Sample = () => {
   return (
-    <Container width='screen-width' height='screen-height'>
-      <Text variant={[FontVariant.HeadingLarge, Font.Bold]}>Welcome</Text>
-      <Button
-        type={ButtonType.PRIMARY}
-        onPress={() => {
-          console.log('Button pressed!');
-        }}
-      >
-        Continue
-      </Button>
-    </Container>
+    <Box
+      alignX='center'
+      alignY='center'
+      width={ScaledSize.SCREEN_WIDTH}
+      height={ScaledSize.SCREEN_HEIGHT}
+    >
+      <Text variant={FontVariant.DISPLAY_LARGE} color={Colors.BLACK}>
+        Sample
+      </Text>
+    </Box>
   );
 };
 
