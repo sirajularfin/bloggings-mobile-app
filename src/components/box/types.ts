@@ -19,7 +19,7 @@ interface Dimension {
 }
 
 interface Flexbox {
-  flex: number;
+  flex?: number;
   alignSelf?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
   alignX?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
   alignY?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
