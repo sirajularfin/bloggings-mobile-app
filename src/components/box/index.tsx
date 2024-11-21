@@ -4,6 +4,10 @@ import { Colors } from '../../theme/colors';
 import styles from './styles';
 import { IProps } from './types';
 
+/**
+ * Generic component for creating a container with various styles
+ * @returns React Function Component
+ */
 const Box: React.FC<PropsWithChildren<IProps>> = ({ children, debug, ...props }) => {
   if (debug) {
     props.borderWidth = 1;
