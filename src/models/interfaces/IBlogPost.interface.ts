@@ -37,7 +37,7 @@ interface IBlogPost {
   /**
    * Identifier of the user who last updated the blog post.
    */
-  updatedBy: IUser;
+  updatedBy: string;
 }
 
 export default IBlogPost;
