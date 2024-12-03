@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:clean": "[ -d android/build ] && rm -rf android/build/*; [ -d android/app/build ] && rm -rf android/app/build/*",
     "ios": "react-native run-ios --simulator='iPhone 15 Pro'",
-    "lint": "eslint .",
+    "ios:clean": "[ -d ios/build ] && rm -rf ios/build/*; rm -rf ~/Library/Developer/Xcode/DerivedData/*;",
     "start": "react-native start",
     "test": "jest",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format:fix": "prettier 'src/**/*.{ts,tsx,json}' --write",
-    "postinstall": "cd ios && pod install && cd .."
+    "postinstall": "cd ios && pod install && cd ..",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.18",
@@ -54,6 +57,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "globals": "^15.13.0",
+    "husky": "^8.0.0",
     "jest": "^29.6.3",
     "prettier": "^3.4.1",
     "react-test-renderer": "18.3.1",
@@ -65,8 +69,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "npm run format:fix",
-      "npm run lint:fix"
+      "yarn format:fix",
+      "yarn lint:fix"
     ]
   }
 }
